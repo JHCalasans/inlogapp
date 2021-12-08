@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="inlogapp.Views.DetailPage"
+              Title="Detalhes">
+
+    <ScrollView>
+        <Grid Margin="5,10,5,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="0.9*" />
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+            <Image  Grid.Row="0" Grid.Column="1" 
+                               Source="{Binding Filme.backdrop_path_complete}" 
+                               Aspect="AspectFit"
+                               HeightRequest="300"
+                               HorizontalOptions="Center"
+                               WidthRequest="500" />
+            <Label Grid.Row="1"  Grid.ColumnSpan="3" HorizontalOptions="Center"  
+                               Text="{Binding Filme.title}" 
+                               FontSize="Large"
+                               TextColor="Blue"
+                               FontAttributes="Bold" />
+            <Label Grid.Row="2"  
+                               Grid.ColumnSpan="3" 
+                               Text="{Binding Filme.vote_average, StringFormat='Pontuação {0}'}"
+                               FontAttributes="Bold"  TextColor="Black"
+                               FontSize="Medium"
+                               VerticalOptions="End" />
+            <Label Grid.Row="3"   Grid.ColumnSpan="3" 
+                               Text="{Binding Filme.release_date, StringFormat='Data de lançamento {0}'}"
+                               FontAttributes="Bold" TextColor="Black"
+                               FontSize="Medium"
+                               VerticalOptions="End" />
+
+            <Label Grid.Row="4"   Grid.ColumnSpan="3" HorizontalOptions="Center"  
+                               Text="{Binding Filme.overview}"
+                               FontAttributes="Bold" 
+                               FontSize="Small"
+                               VerticalOptions="End" />
+
+            <Label Grid.Row="5"   Grid.ColumnSpan="3" TextColor="Black"
+                               Text="{Binding Filme.budget, StringFormat='Orçamento {0:C}'}"
+                               FontAttributes="Bold" 
+                               FontSize="Small"
+                               VerticalOptions="End" />
+            <Label Grid.Row="6"   Grid.ColumnSpan="3" TextColor="Black"
+                               Text="{Binding Filme.revenue, StringFormat='Receita {0:C}'}"
+                               FontAttributes="Bold" 
+                               FontSize="Small"
+                               VerticalOptions="End" />
+
+            <Label Grid.Row="7"   Grid.ColumnSpan="3" TextColor="Black"
+                               Text="{Binding Filme.runtime, StringFormat='Duração {0} minutos'}"
+                               FontAttributes="Bold" 
+                               FontSize="Small"
+                               VerticalOptions="End" />
+
+            <Image  Grid.Row="8" Grid.Column="1" 
+                               Source="share.png" 
+                               Aspect="AspectFit"
+                               HeightRequest="60"
+                               HorizontalOptions="Center"
+                               WidthRequest="50" >
+
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command = "{Binding CompartilharFilmeCommand}"></TapGestureRecognizer>
+
+                </Image.GestureRecognizers>
+            </Image>
+
+
+        </Grid>
+    </ScrollView>
+
+
+
+</ContentPage>

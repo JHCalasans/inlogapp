@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inlogapp.Views.MainPage"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             Title="{Binding Title}">
+
+    <StackLayout Margin="5">
+
+        <SearchBar  BackgroundColor="White" >
+            <SearchBar.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding TextChangedCommand}"
+                                                  EventArgsParameterPath="NewTextValue"
+                                                  EventArgsConverter="{StaticResource TextChangedConverter}">
+
+                </behaviors:EventToCommandBehavior>
+            </SearchBar.Behaviors>
+        </SearchBar>
+
+        <CollectionView ItemsSource="{Binding QueryResults}" x:Name="CollectionFilmes" 
+                        RemainingItemsThreshold="{Binding LimiteFilmes}"
+                        RemainingItemsThresholdReachedCommand="{Binding LoadFilmesCommand}"
+                        VerticalScrollBarVisibility="Always">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="3" 
+                               Source="{Binding poster_path_complete}" 
+                               Aspect="AspectFill"
+                               HeightRequest="40"                                
+                               WidthRequest="60" />
+                        <Label Grid.Column="1" 
+                               Text="{Binding title}" 
+                               FontSize="Large"
+                               TextColor="Blue"
+                               FontAttributes="Bold" />
+                        <Label Grid.Row="1"
+                               Grid.Column="1" 
+                               Text="{Binding vote_average, StringFormat='Vote Average {0}'}"
+                               FontAttributes="Bold" 
+                               FontSize="Medium"
+                               VerticalOptions="End" />
+                        <Label Grid.Row="2"
+                               Grid.Column="1" 
+                               Text="{Binding release_date, StringFormat='Data de lançamento {0}'}"
+                               FontAttributes="Bold" 
+                               FontSize="Medium"
+                               VerticalOptions="End" />
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command = "{Binding BindingContext.SelecionarFilmeCommand, Source={x:Reference CollectionFilmes}}"
+                                                  CommandParameter="{Binding .}"></TapGestureRecognizer>
+
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+       
+    </StackLayout>
+
+</ContentPage>

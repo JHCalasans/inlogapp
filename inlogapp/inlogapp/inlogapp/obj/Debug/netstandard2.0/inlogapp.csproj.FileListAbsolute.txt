@@ -1,0 +1,14 @@
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\bin\Debug\netstandard2.0\inlogapp.deps.json
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\bin\Debug\netstandard2.0\inlogapp.dll
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\bin\Debug\netstandard2.0\inlogapp.pdb
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\inlogapp.csproj.AssemblyReference.cache
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\inlogapp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\inlogapp.AssemblyInfoInputs.cache
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\inlogapp.AssemblyInfo.cs
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\inlogapp.csproj.CoreCompileInputs.cache
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\inlogapp.dll
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\inlogapp.pdb
+D:\Repositorios Git\inlog\inlogapp\inlogapp\inlogapp\obj\Debug\netstandard2.0\Views\DetailPage.xaml.g.cs
